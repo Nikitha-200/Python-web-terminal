@@ -461,7 +461,7 @@ class Terminal:
     
     def get_prompt(self) -> str:
         """Get the terminal prompt"""
-        username = os.getlogin()
+        username = os.environ.get("USER", "user")
         hostname = platform.node()
         cwd = os.getcwd()
         home = os.path.expanduser("~")
